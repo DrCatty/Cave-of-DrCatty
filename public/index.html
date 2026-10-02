@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#11151c">
+<title>大富翁 · 联机版</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%A9%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<header id="topbar" class="topbar" hidden>
+  <div class="tb-left">
+    <span id="turn-dot" class="turn-dot"></span>
+    <b id="turn-label">准备中</b>
+  </div>
+  <div class="tb-right">
+    <span id="room-chip" class="chip"></span>
+    <span id="net-chip" class="chip">本地</span>
+    <button id="btn-mute" class="icon-btn" title="声音开关">🔊</button>
+    <button id="btn-help" class="icon-btn" title="规则说明">?</button>
+    <button id="btn-leave" class="icon-btn" title="退出对局">⏻</button>
+  </div>
+</header>
+
+<main id="stage" class="stage" hidden>
+  <section class="board-wrap">
+    <div id="board" class="board"></div>
+  </section>
+  <aside class="side">
+    <section class="block players-block">
+      <h2>玩家</h2>
+      <div id="players" class="players"></div>
+    </section>
+    <section id="panel" class="block panel-block"></section>
+    <section class="block log-block">
+      <div id="log-tabs" class="tabs">
+        <button class="tab on" data-tab="log">战况</button>
+        <button class="tab" data-tab="chat">聊天</button>
+      </div>
+      <div id="log" class="log"></div>
+      <form id="chat-form" class="chat-form" autocomplete="off">
+        <input id="chat-input" class="input" placeholder="说点什么…" maxlength="200">
+        <button class="btn tiny" type="submit">发送</button>
+      </form>
+    </section>
+  </aside>
+</main>
+
+<div id="detail" class="sheet" hidden></div>
+<div id="modal" class="modal" hidden></div>
+<div id="lobby" class="lobby"></div>
+<div id="toast" class="toast" hidden></div>
+
+<script type="module" src="/ui.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+# Render blueprint: one Docker web service, WebSocket-capable, free plan.
+# Point Render at this repo and it will build ./Dockerfile automatically.
+services:
+  - type: web
+    name: monopoly-online
+    runtime: docker
+    plan: free
+    region: singapore
+    healthCheckPath: /healthz
+    autoDeploy: true
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: MAX_ROOMS
+        value: "400"
+      - key: MAX_ROOM_SIZE
+        value: "8"
